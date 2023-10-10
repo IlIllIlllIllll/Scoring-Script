@@ -57,6 +57,7 @@ aws elbv2 describe-listeners --load-balancer-arn $alb_arn --query "Listeners[].P
 ### Select ELB Target Group Status Check
 ```
 alb_tg_arn=$(aws elbv2 describe-target-groups --names <ELB Target Group Name> --query "TargetGroups[].TargetGroupArn" --output text)
+
 aws elbv2 describe-target-health --target-group-arn $alb_tg_arn --query "TargetHealthDescriptions[].TargetHealth.State"
 ```
 
