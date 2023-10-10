@@ -1,42 +1,42 @@
 ## Scoring-Script
 ---
 ### ELB
-### Select ELB Name Check
+### Check ELB Name
 ```
 aws elbv2 describe-load-balancers --query "LoadBalancers[?LoadBalancerName=='<ELB Name>'].LoadBalancerName"
 ```
 
 <br>
 
-### Select ELB Scheme Type Check
+### Check ELB Scheme Type
 ```
 aws elbv2 describe-load-balancers --query "LoadBalancers[?LoadBalancerName=='<ELB Name>'].Scheme"
 ```
 
 <br>
 
-### Select ELB Type Check
+### Check ELB Type
 ```
 aws elbv2 describe-load-balancers --query "LoadBalancers[?LoadBalancerName=='<ELB Name>'].Type"
 ```
 
 <br>
 
-### Select ELB AZ Check
+### Check ELB AZ
 ```
 aws elbv2 describe-load-balancers --query "LoadBalancers[?LoadBalancerName=='<ELB Name>'].AvailabilityZones[].ZoneName"
 ```
 
 <br>
 
-### Select ELB DNS Check
+### Check ELB DNS
 ```
 aws elbv2 describe-load-balancers --names <ELB Name> --query "LoadBalancers[].DNSName"
 ```
 
 <br>
 
-### Select ELB Listener Protocol Check
+### Check ELB Listener Protocol
 ```
 alb_arn=$(aws elbv2 describe-load-balancers --query "LoadBalancers[?LoadBalancerName=='<ELB Name>'].LoadBalancerArn" --output text)
 
@@ -45,7 +45,7 @@ aws elbv2 describe-listeners --load-balancer-arn $alb_arn --query "Listeners[].P
 
 <br>
 
-### Select ELB Listener Port Check
+### Check ELB Listener Port
 ```
 alb_arn=$(aws elbv2 describe-load-balancers --query "LoadBalancers[?LoadBalancerName=='<ELB Name>'].LoadBalancerArn" --output text)
 
@@ -54,7 +54,7 @@ aws elbv2 describe-listeners --load-balancer-arn $alb_arn --query "Listeners[].P
 
 <br>
 
-### Select ELB Target Group Status Check
+### Check ELB Target Group Status
 ```
 alb_tg_arn=$(aws elbv2 describe-target-groups --names <ELB Target Group Name> --query "TargetGroups[].TargetGroupArn" --output text)
 
@@ -63,7 +63,7 @@ aws elbv2 describe-target-health --target-group-arn $alb_tg_arn --query "TargetH
 
 <br>
 
-### Select ELB Target Group AZ Check
+### Check ELB Target Group AZ
 ```
 alb_tg_arn=$(aws elbv2 describe-target-groups --names wsi-ecs-tg --query "TargetGroups[].TargetGroupArn" --output text)
 
