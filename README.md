@@ -1,1 +1,11 @@
 # Scoring-Script
+---
+- VPC
+- EC2
+- S3
+- ELB
+- ECR
+- ECS
+- CodeSeries
+- CloudWatch
+- CloudFront 
