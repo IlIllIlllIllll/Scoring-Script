@@ -1,11 +1,21 @@
 # Scoring-Script
 ---
-- VPC
+- CloudFormation
+- CloudFront
+- CloudWatch
+- CodeSeries
+    - CodeCommit
+    - CodeBuild
+    - CodeDeploy
 - EC2
-- S3
-- ELB
 - ECR
 - ECS
-- CodeSeries
-- CloudWatch
-- CloudFront 
+- ELB
+- Glue
+- KinesisSeries
+    - Kinesis Data Stream
+    - Kinesis Data Firehose
+- Lambda
+- RDS
+- S3
+- VPC
